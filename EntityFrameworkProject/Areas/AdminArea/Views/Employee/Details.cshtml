@@ -1,0 +1,33 @@
+﻿@model Employee
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container my-5">
+    <div class="card">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Fullname</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Positon</th>
+                    <th scope="col">Active or Not</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Model.FullName</td>
+                    <td>@Model.Age</td>
+                    <td>@Model.Position</td>
+                    <td>@Model.IsActive</td>
+
+                </tr>                
+            </tbody>
+        </table>
+        
+    </div>
+</div>
+

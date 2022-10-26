@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Product>
+
+@foreach (var product in Model)
+{
+    <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
+        <div class="product-item text-center" data-id="@product.CategoryId">
+            <input type="hidden" class="product-id" value="@product.Id" />
+            <div class="img">
+                <a href="">
+                    <img src="~/img/@product.ProductImages.FirstOrDefault(m=>m.IsMain)?.Image" class="img-fluid" alt="">
+                </a>
+            </div>
+            <div class="title mt-3">
+                <h6>@product.Title</h6>
+            </div>
+            <div class="price">
+                <span class="text-black-50">
+                        <button type="submit" class="btn btn-primary add-to-cart">add to cart</button>
+                </span>
+                <span class="text-black-50">$@product.Price</span>
+            </div>
+        </div>
+    </div>
+}

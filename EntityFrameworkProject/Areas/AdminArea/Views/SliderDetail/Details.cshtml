@@ -1,0 +1,44 @@
+﻿@model SliderDetail
+@{
+    ViewData["Title"] = "Details";    
+}
+
+<div class="container my-5">
+    <div class="card">
+        <div class="card-header">
+            Slider details
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Header
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>
+                        <img src="~/img/@Model.Image" alt="slider" style="height:130px" ; width="130px" />
+                    </td>
+                    <td>
+                        @Html.Raw(Model.Header)
+                    </td>
+                    <td>
+                        @Model.Description;
+                    </td>
+
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

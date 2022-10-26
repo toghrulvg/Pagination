@@ -1,0 +1,52 @@
+﻿@model SliderDetail
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <span class="text-danger">@ViewBag.Message</span>
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <form asp-action="Create" class="forms-sample" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <div>
+                                    <label for="exampleInputUsername1">Header</label>
+                                    <textarea class="form-control rounded-0" asp-for="Header" id="category-name" rows="5"></textarea>
+                                    <span class="text-danger my-1" asp-validation-for="Header"></span>
+                                </div>
+
+                                <div>
+                                    <label class="my-5" for="exampleInputUsername1">Description</label>
+                                    <input type="text" class="form-control" asp-for="Description">
+                                    <span class="text-danger my-1" asp-validation-for="Description"></span>
+                                </div>
+
+                                <div class="my-5">
+                                    <label for="exampleInputUsername1">Sign image</label>
+                                    <div class="form-group">
+                                        <input class="form-control" asp-for="Photo">
+                                        <span class="text-danger" asp-validation-for="Photo"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                            <a asp-controller="SliderDetail" asp-action="Index" class="btn btn-light">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationPartial" />
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("category-name");
+    </script>
+}
+

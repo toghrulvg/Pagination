@@ -1,0 +1,40 @@
+﻿@model List<BasketDetailVM>
+@{
+    ViewData["Title"] = "Index";
+
+    decimal endTotal = 0;
+}
+
+<div class="container">
+    <h3 class="my-3 mb-2">Products</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Image</th>
+                <th scope="col">Title</th>
+                <th scope="col">Count</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <th>
+                    <img style="width:100px;height:100px" src="~/img/@item.Image" alt="product image" />
+                </th>
+                <td>@item.Title</td>
+                <td>@item.Count</td>
+                <td>@item.Price.ToString("0.#####") ₼</td>
+                <td>@item.Total.ToString("0.#####") ₼</td>
+            </tr>
+                endTotal += item.Total;
+            }
+
+        <h2>Total price: @endTotal.ToString("0.#####") ₼</h2>
+
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,19 @@
+﻿@model Social
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container my-5">
+    <div class="card">
+        <div class="card-header">
+            Social detail
+        </div>
+        <div class="card-body">
+            <p class="card-text">@Model.Name</p>
+            <p class="card-text">@Model.Url</p>
+        </div>
+    </div>
+</div>
+
